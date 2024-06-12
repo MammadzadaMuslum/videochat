@@ -3,6 +3,9 @@
   right: 48px;
   bottom: 33px;
 }
+.video-chat .added-video {
+  position: relative;
+}
 .video-chat .added-video,
 .video-chat .paused-video {
   width: 252px;
@@ -102,7 +105,7 @@
 .video-chat .paused-video .custom-controls .css-1qaf1kb {
   margin: 0;
   position: absolute;
-  top: -5px;
+  top: -4px;
 }
 .video-chat .paused-video {
   border-radius: 100%;
@@ -128,4 +131,101 @@
   left: 50px;
   top: 5px;
   color: white;
+}
+.video-chat .video-form {
+  background-color: #eff0ff;
+  position: absolute;
+  top: -18px;
+  width: 341px;
+  height: 445px;
+  right: -100%;
+  transition: all 0.5s ease;
+  z-index: 10000;
+}
+.video-chat .video-form.show-form {
+  right: 0;
+  transition: all 0.5s ease;
+}
+.video-chat .video-form .video-form-top {
+  background-color: white;
+  border-radius: 0px 0px 20px 20px;
+}
+.video-chat .video-form .video-form-top .close-icn {
+  background-color: black;
+  color: white;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+.video-chat .video-form .video-form-top .form-text {
+  padding: 35px;
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 22.5px;
+  text-align: center;
+}
+.video-chat .video-form .video-form-bottom {
+  background-color: white;
+  border-radius: 20px 20px 0px 0px;
+  height: 353px;
+}
+.video-chat .video-form .video-form-bottom .submit-form {
+  height: 353px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px;
+}
+.video-chat .video-form .video-form-bottom .submit-form .form-top {
+  display: flex;
+  flex-direction: column;
+}
+.video-chat .video-form .video-form-bottom .submit-form .form-top .css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root {
+  color: #cecef6;
+  font-family: Poppins;
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 15px;
+  text-align: left;
+}
+.video-chat .video-form .video-form-bottom .submit-form .form-top .css-1x51dt5-MuiInputBase-input-MuiInput-input {
+  padding: 0;
+}
+.video-chat .video-form .video-form-bottom .submit-form textarea {
+  margin: 10px 0;
+  border: none;
+  resize: none;
+  padding: 5px;
+  height: 141px;
+}
+.video-chat .video-form .video-form-bottom .submit-form textarea::-moz-placeholder {
+  font-family: Poppins;
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 15px;
+  text-align: left;
+  color: #cecef6;
+}
+.video-chat .video-form .video-form-bottom .submit-form textarea::placeholder {
+  font-family: Poppins;
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 15px;
+  text-align: left;
+  color: #cecef6;
+}
+.video-chat .video-form .video-form-bottom .submit-form .btn-sbt {
+  background-color: #5a8cfe;
+  padding: 8px;
+  border: none;
+  width: 101px;
+  border-radius: 10px;
+  color: white;
+  font-family: Poppins;
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 15px;
+  cursor: pointer;
 }/*# sourceMappingURL=videochat.css.map */
