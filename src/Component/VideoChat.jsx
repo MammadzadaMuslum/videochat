@@ -10,6 +10,7 @@ import herefoto from "../Image/image 1.png";
 import { IoClose } from "react-icons/io5";
 import close from "../Image/close.png";
 import TextField from "@mui/material/TextField";
+
 function VideoChat() {
   const videoRef = useRef(null);
   const [currentTime, setCurrentTime] = useState(0);
@@ -18,6 +19,7 @@ function VideoChat() {
   const [rangeValue, setRangeValue] = useState(0);
   const [clicked, setClicked] = useState(false);
   const [btnClick, setBtnClick] = useState(false);
+
   useEffect(() => {
     const video = videoRef.current;
 
@@ -84,12 +86,42 @@ function VideoChat() {
       }
     }
   };
+
   const handleBtn = () => {
     setBtnClick(!btnClick);
   };
+
   const hadnleBtnClose = () => {
     setBtnClick(false);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      const addedVideoElement = document.querySelector('.added-video');
+      const pausedVideoElement = document.querySelector('.paused-video');
+      if (window.innerWidth <= 575) {
+        if (btnClick) {
+          if (addedVideoElement) addedVideoElement.style.display = 'none';
+          if (pausedVideoElement) pausedVideoElement.style.display = 'none';
+        } else {
+          if (addedVideoElement) addedVideoElement.style.display = 'block';
+          if (pausedVideoElement) pausedVideoElement.style.display = 'block';
+        }
+      } else {
+        if (addedVideoElement) {
+          addedVideoElement.style.display = '';
+          addedVideoElement.classList.toggle('shifted', btnClick);
+        }
+        if (pausedVideoElement) pausedVideoElement.style.display = '';
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [btnClick]);
 
   return (
     <>
@@ -101,7 +133,6 @@ function VideoChat() {
         <div
           className={clicked ? "added-video" : "paused-video"}
           onClick={handleClick}
-          style={{ right: btnClick ? "341px" : "0" }}
         >
           <video
             className={clicked ? "video" : "video-default"}
@@ -149,7 +180,7 @@ function VideoChat() {
                   startIcon={<VscCalendar className="calendar-icon" />}
                   className="added-calendar"
                   onClick={handleBtn}
-                  style={{display:btnClick? "none":"flex"}}
+                  style={{ display: btnClick ? "none" : "flex" }}
                 >
                   Get a consultation!
                 </Button>
@@ -173,7 +204,7 @@ function VideoChat() {
                 <Box
                   component="form"
                   sx={{
-                    "& > :not(style)": {  width: "25ch" },
+                    "& > :not(style)": { width: "25ch" },
                   }}
                   noValidate
                   autoComplete="off"

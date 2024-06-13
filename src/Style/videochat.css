@@ -1,10 +1,14 @@
 .video-chat {
-  position: absolute;
+  position: fixed;
   right: 48px;
   bottom: 33px;
 }
 .video-chat .added-video {
   position: relative;
+  right: 0;
+}
+.video-chat .shifted {
+  right: 341px;
 }
 .video-chat .added-video,
 .video-chat .paused-video {
@@ -119,9 +123,6 @@
   bottom: 36px;
   right: 17px;
 }
-.video-chat .here .here-img {
-  position: absolute;
-}
 .video-chat .here .here-click {
   position: absolute;
   font-family: Inter;
@@ -228,4 +229,37 @@
   font-weight: 300;
   line-height: 15px;
   cursor: pointer;
+}
+
+@media (max-width: 575px) {
+  .video-chat {
+    position: static;
+  }
+  .video-chat .paused-video {
+    position: fixed;
+    right: 48px !important;
+    bottom: 33px;
+  }
+  .video-chat .here {
+    position: fixed;
+    bottom: 190px;
+    right: 33px;
+  }
+  .video-chat .added-video {
+    top: 50px;
+    width: 100%;
+    height: 93vh;
+  }
+  .video-chat .added-video.hide {
+    display: none;
+  }
+  .video-chat .show-form {
+    position: static;
+    height: 100vh;
+    width: 100%;
+    margin-top: 50px;
+  }
+  .video-chat .video-form-bottom {
+    height: 100vh;
+  }
 }/*# sourceMappingURL=videochat.css.map */

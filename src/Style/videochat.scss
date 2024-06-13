@@ -1,9 +1,14 @@
 .video-chat {
-  position: absolute;
+  position: fixed;
   right: 48px;
   bottom: 33px;
   .added-video {
     position: relative;
+    right: 0;
+  }
+
+  .shifted {
+    right: 341px;
   }
   .added-video,
   .paused-video {
@@ -121,9 +126,6 @@
     position: relative;
     bottom: 36px;
     right: 17px;
-    .here-img {
-      position: absolute;
-    }
     .here-click {
       position: absolute;
       font-family: Inter;
@@ -228,4 +230,38 @@
       }
     }
   }
+}
+@media(max-width:575px){
+  .video-chat{
+    position: static;
+    .paused-video{
+      position: fixed;
+      right: 48px !important;
+      bottom: 33px;
+    }
+    .here{
+      position: fixed;
+      bottom: 190px;
+     right: 33px;
+    }
+    .added-video{
+      top: 50px;
+    width: 100%;
+    height: 93vh;
+    }
+    .added-video.hide {
+      display: none;
+    }
+   .show-form{
+    position: static;
+    height: 100vh;
+    width: 100%;
+    margin-top: 50px;
+   }
+   .video-form-bottom{
+    height: 100vh;
+   }
+    
+  }
+
 }
